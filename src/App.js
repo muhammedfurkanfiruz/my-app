@@ -1,12 +1,13 @@
 
 import './App.css';
-import Test from './components/test/Test';
+import FormControl from './components/FormControl';
+
 
 function App() {
   return (
     <div className="App">
 
-    <Test />
+    <FormControl />
    
     </div>
   );
