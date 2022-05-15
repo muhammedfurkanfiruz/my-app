@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function FormControl() {
+function FormControl(props) {
   const [duty, setDuty] = useState("");
   const [expression, setExpression] = useState("");
 
@@ -21,10 +21,17 @@ function FormControl() {
           onChange={(event) => setExpression(event.target.value)}
         ></input>
       </div>
-      <button onClick={() => console.log({
-          duty: duty,
-          expression: expression
-      })}>Ekle</button>
+      <button
+        onClick={() => {
+          props.onClick({
+         duty:duty,
+         expression : expression,
+         time: new Date().toLocaleString()
+          })
+        }}
+      >
+        Ekle
+      </button>
     </div>
   );
 }
